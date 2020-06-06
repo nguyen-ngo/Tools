@@ -42,7 +42,7 @@ class Macchanger:
             subprocess.run(["sudo","/etc/init.d/networking","restart"], stdout=subprocess.DEVNULL)
         except Exception as err:
             print(f"Error occurs: {err}")
-        print(f"Faked MAC: {self.new_mac_addr}")
+        print(f"New MAC: {self.new_mac_addr}")
 
 
 def checkmac(mac_addr):
@@ -66,6 +66,10 @@ def main():
                         metavar="MAC_ADDR",
                         help="Assign current MAC address with MAC_ADDR.")
     
+    if len(sys.argv) == 1:
+        parser.print_help()
+        parser.exit(1)
+        
     args = parser.parse_args()
  
     if args is not None:
