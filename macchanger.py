@@ -3,6 +3,7 @@ import subprocess
 import re
 import random
 import argparse
+import sys
 
 class Macchanger:
 
