@@ -5,7 +5,7 @@ import random
 import argparse
 import sys
 
-class Macchanger:
+class MacChanger:
 
     def __init__(self, iface):
         self.iface = iface
@@ -46,7 +46,7 @@ class Macchanger:
         print(f"New MAC: {self.new_mac_addr}")
 
 
-def checkmac(mac_addr):
+def check_mac(mac_addr):
     mac_pattern = r"^([0-9a-f]{2}:){5}[0-9a-f]{2}$"
     result = re.match(mac_pattern, mac_addr.lower())
     if result is not None:
@@ -75,11 +75,11 @@ def main():
  
     if args is not None:
         if args.m==None:
-            mObj = Macchanger(args.i)
+            mObj = MacChanger(args.i)
             mObj.change_mac_addr()
         else:
-            if checkmac(args.m):
-                mObj = Macchanger(args.i)
+            if check_mac(args.m):
+                mObj = MacChanger(args.i)
                 mObj.change_mac_addr(args.m)
             else:
                 print(f"{args.m} is not a valid MAC address.")
