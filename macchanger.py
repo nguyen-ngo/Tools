@@ -30,7 +30,7 @@ class MacChanger:
         return random_mac
 
 
-    def change_mac_addr(self,new_mac="None"):
+    def change_mac_addr(self, new_mac="None"):
         if new_mac == "None":
             self.new_mac_addr = self.mac_random()
         else:
