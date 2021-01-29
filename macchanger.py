@@ -5,6 +5,7 @@ import random
 import argparse
 import sys
 
+
 class MacChanger:
 
     def __init__(self, iface):

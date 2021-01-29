@@ -7,6 +7,7 @@ import netaddr
 from scapy.all import *
 conf.verb = 0 #Turn scapy verbose mode off
 
+
 class Scanner:
 
     def __init__(self, hosts):
@@ -129,6 +130,7 @@ def main():
     except KeyboardInterrupt:
         print("[!] Script terminated. Good bye!!")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
